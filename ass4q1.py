@@ -9,21 +9,21 @@ from sklearn.metrics import (
     r2_score
 )
 
-# House area in square feet
+
 X = np.array([
     800, 1000, 1200, 1400, 1600,
     1800, 2000, 2200, 2400, 2600,
     2800, 3000
 ]).reshape(-1, 1)
 
-# House prices in lakhs
+
 y = np.array([
     35, 42, 48, 55, 62,
     70, 78, 85, 93, 101,
     110, 120
 ])
 
-# Train-test split
+
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -31,16 +31,16 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
-# Create model
+
 model = LinearRegression()
 
-# Train
+
 model.fit(X_train, y_train)
 
-# Prediction
+
 y_pred = model.predict(X_test)
 
-# Metrics
+
 mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 rmse = np.sqrt(mse)
@@ -56,7 +56,7 @@ print(f"MSE  : {mse:.2f}")
 print(f"RMSE : {rmse:.2f}")
 print(f"R2   : {r2:.4f}")
 
-# Plot
+
 plt.figure(figsize=(8, 5))
 
 plt.scatter(
