@@ -7,10 +7,7 @@ from sklearn.metrics import (
     r2_score
 )
 
-# Features:
-# Area in sq.ft.
-# Bedrooms
-# Age of house in years
+
 
 X = np.array([
     [800, 2, 15],
@@ -27,13 +24,13 @@ X = np.array([
     [3000, 6, 1]
 ])
 
-# House price in lakhs
+
 y = np.array([
     35, 42, 48, 55, 63, 72,
     80, 88, 96, 105, 114, 125
 ])
 
-# Split
+
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -41,16 +38,16 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
-# Model
+
 model = LinearRegression()
 
-# Train
+
 model.fit(X_train, y_train)
 
-# Predict
+
 y_pred = model.predict(X_test)
 
-# Metrics
+
 mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 rmse = np.sqrt(mse)
@@ -71,7 +68,7 @@ print(f"MSE  : {mse:.2f}")
 print(f"RMSE : {rmse:.2f}")
 print(f"R2   : {r2:.4f}")
 
-# Predict a new house
+
 new_house = np.array([[2000, 4, 3]])
 
 predicted_price = model.predict(new_house)
